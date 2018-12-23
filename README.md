@@ -18,7 +18,8 @@ python dataset_stats.py
 ====Parsing clips====
 [training set]: 492753 videos, 1509497 clips
 [validation set]: 5982 videos, 20249 clips
-[testing set]: 5988 videos, 20296 clips                                                                                                   ====Parsing segments====
+[testing set]: 5988 videos, 20296 clips
+====Parsing segments====
 [training set]: 37618 videos
 [validation set]: 5982 videos
 [testing set]: 5988 videos
