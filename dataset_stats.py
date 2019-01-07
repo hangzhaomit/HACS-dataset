@@ -25,6 +25,7 @@ def parse_clips():
         print('[{} set]: {} videos, {} clips'.format(
               subset, len(videos[subset]), n_clips[subset]))
 
+
 # HACS Segments statistics
 def parse_segments():
     print('====Parsing segments====')
