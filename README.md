@@ -1,5 +1,7 @@
 # HACS-dataset
 
+<img src="./teaser.png"/>
+
 This project introduces a novel video dataset, named HACS (Human Action Clips and Segments). It consists of two kinds of manual annotations. HACS Clips contains 1.55M 2-second clip annotations; HACS Segments has complete action segments (from action start to end) on 50K videos. The large-scale dataset is effective for pretraining action recognition and localization models, and also serves as a new benchmark for temporal action localization. (*SLAC dataset is now part of HACS dataset.)
 
 Project Website: http://hacs.csail.mit.edu/
