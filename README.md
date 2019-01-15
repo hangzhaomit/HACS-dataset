@@ -79,7 +79,7 @@ YouTube videos can dissapear over time, so you may find the videos you downloade
 ## Reference
 If you use find the dataset helpful, please cite:
 ```bibtex
-@article{zhao2018hacs,
+@article{zhao2019hacs,
   title={HACS: Human Action Clips and Segments Dataset for Recognition and Temporal Localization},
   author={Zhao, Hang and Yan, Zhicheng and Torresani, Lorenzo and Torralba, Antonio},
   journal={arXiv preprint arXiv:1712.09374},
