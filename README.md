@@ -64,23 +64,35 @@ Archery,0O_qMHxBfXg,training,24.5,26.5,-1
 ## Download Videos
 1. Install the following libraries:
 
-    (a) youtube-dl (https://github.com/rg3/youtube-dl), make sure it is up-to-date.
+-  youtube-dl (https://github.com/rg3/youtube-dl), make sure it is up-to-date.
 
-    (b) FFmpeg (https://www.ffmpeg.org/).
+-  FFmpeg (https://www.ffmpeg.org/).
 
 2. Run the following command to download videos:
 
 ```python download_videos.py --root_dir ROOT_DIR [--dataset {all,segments}] [--shortside SHORTSIDE]```
 
-```ROOT_DIR``` is the root path to save the downloaded videos;
+- ```ROOT_DIR``` is the root path to save the downloaded videos;
 You can choose to download all videos or only HACS Segments videos with ```--dataset```;
 By default, we resize videos with short side of 256 for less disk usage, you can change with ```--shortside```.
 
-Videos are saved in the following directory structure ```ROOT_DIR/CLASSNAME/v_ID.mp4```
+- Videos are saved in the following directory structure ```ROOT_DIR/CLASSNAME/v_ID.mp4```
 
-3. Deal with missing videos: (coming soon)
+3. Deal with missing videos: (Coming Soon)
 
-YouTube videos can dissapear over time, so you may find the videos you downloaded incomplete, we provide a solution for you to download missing videos.
+- YouTube videos can dissapear over time, so you may find the videos you downloaded incomplete, we provide the following solution for you to have access to missing videos.
+
+    (a) Run ```python check_missing_videos.py>missing.txt``` to generate text file ```missing.txt``` containing missing video IDs. You can also create your own in the following format:
+    ```
+    a2X2hz1G6i8
+    NUdji_CqvcY
+    0O_qMHxBfXg
+    ...
+    ```
+    (b) Submit a video request by agreeing to terms of use at: . You will get a temporary link to the videos within 72 hours.
+
+    (c) NOTE: we limit up to 5000 videos per request, so please send multiple requests if you have more missing videos.
+
 
 ## Reference
 If you use find the dataset helpful, please cite:
