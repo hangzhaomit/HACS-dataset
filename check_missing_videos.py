@@ -1,3 +1,6 @@
+# This script find missing videos of HACS dataset
+# it outputs a file missing.csv, where users can send to developer to request video files
+
 import os
 import fnmatch
 import csv
