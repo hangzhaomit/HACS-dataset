@@ -82,16 +82,16 @@ By default, we resize videos with short side of 256 for less disk usage, you can
 
 - YouTube videos can dissapear over time, so you may find the videos you downloaded incomplete, we provide the following solution for you to have access to missing videos.
 
-    (a) Run ```python check_missing_videos.py``` to generate text file ```missing.csv``` containing missing video IDs. You can also create your own in the following format:
+    (a) Run ```python check_missing_videos.py``` to generate text file ```missing.csv``` containing missing video IDs. You can also create your own in the following format {VIDEO_ID,CLASS_NAME}:
     ```
-    a2X2hz1G6i8
-    NUdji_CqvcY
-    0O_qMHxBfXg
+    WWowbBQB1lU,Ironing_clothes
+    Kb08E4K8fg8,Pole_vault
+    NKB_CEA5jNQ,Playing_squash
     ...
     ```
-    (b) Submit a video request by agreeing to terms of use at: . You will get a temporary link to the videos within 72 hours.
+    (b) Submit a video request by agreeing to terms of use at: . You will get links to the missing videos within 72 hours.
 
-    (c) NOTE: we limit up to 5000 videos per request, so please send multiple requests if you have more missing videos.
+    (c) NOTE: we limit up to 10,000 videos per request, so please send multiple requests if you have more missing videos.
 
 
 ## Reference
