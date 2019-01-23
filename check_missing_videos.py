@@ -2,18 +2,11 @@
 # it outputs a file missing.csv, where users can send to developer to request video files
 
 import os
+import glob
 import fnmatch
 import csv
 import json
 import argparse
-
-
-def find_recursive(root_dir, ext='.mp4'):
-    files = []
-    for root, dirnames, filenames in os.walk(root_dir):
-        for filename in fnmatch.filter(filenames, '*' + ext):
-            files.append(os.path.join(root, filename))
-    return files
 
 
 if __name__ == '__main__':
@@ -24,7 +17,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # parse annotation file
-    vids_dataset = set()
+    videos_dataset = set()
     if args.dataset == 'all':
         annotation_file = 'HACS_v1.1/HACS_clips_v1.1.csv'
         with open(annotation_file, 'r') as f:
@@ -35,7 +28,7 @@ if __name__ == '__main__':
                 if subset == 'testing':
                     continue
                 classname = classname.replace(' ', '_')
-                vids_dataset.add(vid)
+                videos_dataset.add((vid, classname))
 
     elif args.dataset == 'segments':
         annotation_file = 'HACS_v1.1/HACS_segments_v1.1.json'
@@ -47,24 +40,28 @@ if __name__ == '__main__':
             annos = info['annotations']
             for anno in annos:
                 classname = anno['label'].replace(' ', '_')
-                vids_dataset.add(vid)
+                videos_dataset.add((vid, classname))
 
-    print('{} videos in dataset.'.format(len(vids_dataset)))
+    print('{} videos in dataset.'.format(len(videos_dataset)))
 
     # index video files
-    video_files = find_recursive(args.root_dir)
-    vids_exist = [os.path.basename(video)[2:-4] for video in video_files]
-    vids_exist = set(vids_exist)
+    video_files = glob.glob(os.path.join(args.root_dir, '*', '*.mp4'))
+    videos_exist = set()
+    for video in video_files:
+        items = video.split('/')
+        vid = items[-1][-15:-4]
+        classname = items[-2]
+        videos_exist.add((vid, classname))
 
-    vids_missing = []
-    for vid in vids_dataset:
-        if vid not in vids_exist:
-            vids_missing.append(vid)
-    print('Missing videos:', len(vids_missing))
+    videos_missing = []
+    for item in videos_dataset:
+        if item not in videos_exist:
+            videos_missing.append(item)
+    print('Missing videos:', len(videos_missing))
 
     # output list to a csv file
     with open(args.output_list, 'w') as f:
-        for vid in vids_missing:
-            f.write('{}\n'.format(vid))
+        for item in videos_missing:
+            f.write('{},{}\n'.format(item[0], item[1]))
 
     print('Done.')
