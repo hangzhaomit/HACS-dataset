@@ -8,6 +8,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import os
+import shutil
 import subprocess
 import random
 import json
@@ -65,7 +66,7 @@ def resize_move(tmp_video, resized_video, shortside=256):
         subprocess.call(command)
         os.remove(tmp_video)
     else:
-        os.rename(tmp_video, resized_video)
+        shutil.move(tmp_video, resized_video)
 
 
 def process(video, args):
