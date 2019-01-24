@@ -1,9 +1,8 @@
 # This script find missing videos of HACS dataset
-# it outputs a file missing.csv, where users can send to developer to request video files
+# it outputs a file missing.txt, where users can send to developer to request video files
 
 import os
 import glob
-import fnmatch
 import csv
 import json
 import argparse
@@ -13,7 +12,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--root_dir', required=True)
     parser.add_argument('--dataset', default='all', choices=['all', 'segments'])
-    parser.add_argument('--output_list', default='missing.csv')
+    parser.add_argument('--output_list', default='missing.txt')
     args = parser.parse_args()
 
     # parse annotation file
