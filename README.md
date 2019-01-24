@@ -78,20 +78,22 @@ By default, we resize videos with short side of 256 for less disk usage, you can
 
 - Videos are saved in the following directory structure ```ROOT_DIR/CLASSNAME/v_ID.mp4```
 
-3. Deal with missing videos: (Coming Soon)
+3. Request testing videos and missing videos: (NEW)
+
+- To access the full testing videos, please submit a request at https://goo.gl/forms/0STStcLndI32oke22. You will get links to them within 72 hours.
 
 - YouTube videos can dissapear over time, so you may find the videos you downloaded incomplete, we provide the following solution for you to have access to missing videos.
 
-    (a) Run ```python check_missing_videos.py``` to generate text file ```missing.csv``` containing missing video IDs. You can also create your own in the following format {VIDEO_ID,CLASS_NAME}:
+    (a) Run ```python check_missing_videos.py``` to generate text file ```missing.txt``` containing missing video IDs. You can also create your own in the following format {VIDEO_ID,CLASS_NAME}:
     ```
     WWowbBQB1lU,Ironing_clothes
     Kb08E4K8fg8,Pole_vault
     NKB_CEA5jNQ,Playing_squash
     ...
     ```
-    (b) Submit a video request by agreeing to terms of use at: . You will get links to the missing videos within 72 hours.
+    (b) Submit a video request by agreeing to terms of use at: https://goo.gl/forms/0STStcLndI32oke22. You will get links to the missing videos within 72 hours.
 
-    (c) NOTE: we limit up to 10,000 videos per request, so please send multiple requests if you have more missing videos.
+    (c) NOTE: We limit up to 20,000 videos per request, so please send multiple requests if you have more missing videos.
 
 
 ## Reference
