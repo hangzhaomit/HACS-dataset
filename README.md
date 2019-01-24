@@ -78,7 +78,7 @@ By default, we resize videos with short side of 256 for less disk usage, you can
 
 - Videos are saved in the following directory structure ```ROOT_DIR/CLASSNAME/v_ID.mp4```
 
-3. Request testing videos and missing videos: (NEW)
+## Request testing videos and missing videos: (NEW)
 
 - To access the full testing videos, please submit a request at https://goo.gl/forms/0STStcLndI32oke22. You will get links to them within 72 hours.
 
