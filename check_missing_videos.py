@@ -58,9 +58,10 @@ if __name__ == '__main__':
             videos_missing.append(item)
     print('Missing videos:', len(videos_missing))
 
-    # output list to a csv file
-    with open(args.output_list, 'w') as f:
-        for item in videos_missing:
-            f.write('{},{}\n'.format(item[0], item[1]))
+    if len(videos_missing) > 0:
+        # output list to a csv file
+        with open(args.output_list, 'w') as f:
+            for item in videos_missing:
+                f.write('{},{}\n'.format(item[0], item[1]))
 
     print('Done.')
