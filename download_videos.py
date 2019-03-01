@@ -146,11 +146,11 @@ if __name__ == "__main__":
     elif args.dataset == 'missing':
         assert args.missing_url is not None
         print("Trying to read the input url {}".format(args.missing_url))
-        #try:
-        data = urllib.request.urlopen(args.missing_url)
-        #except:
-        #    print("Was not able to read the file")
-        #    exit()  # is there a better way to do thi?
+        try:
+            data = urllib.request.urlopen(args.missing_url)
+        except:
+            print("Was not able to read the file")
+            exit()  # is there a better way to do thi?
 
         for line in data:
             video_name = str(line).split('/')[-1][:-3]
