@@ -95,6 +95,7 @@ By default, we resize videos with short side of 256 for less disk usage, you can
 
     (c) NOTE: We limit up to 20,000 videos per request, so please send multiple requests if you have more missing videos.
 
+    (d) Use the download script to download missing videos by running `python download_videos.py --root_dir rest_of_your_videos --dataset missing --missing_url "http://sample.missing/urls.txt"`
 
 ## Reference
 If you use find the dataset helpful, please cite:

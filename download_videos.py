@@ -11,6 +11,7 @@ import os
 import shutil
 import subprocess
 import random
+import urllib.request
 import json
 import csv
 import argparse
@@ -69,6 +70,17 @@ def resize_move(tmp_video, resized_video, shortside=256):
         shutil.move(tmp_video, resized_video)
 
 
+def process_missing(video, args):
+    url, vid, classname = video
+    output_path = os.path.join(args.root_dir, classname, vid)
+    if os.path.exists(output_path):
+        return
+    try:
+        urllib.request.urlretrieve(url, output_path)
+        print("processed {} file".format(output_path))
+    except Exception as e:
+        print("Error processing {} file with error {}".format(url, e))
+
 def process(video, args):
     vid, classname = video
     basename = 'v_{}.mp4'.format(vid)
@@ -92,10 +104,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--root_dir', required=True)
     parser.add_argument('--tmp_dir', default='/tmp/HACS')
-    parser.add_argument('--dataset', default='all', choices=['all', 'segments'])
+    parser.add_argument('--dataset', default='all', choices=['all', 'segments', 'missing'])
     parser.add_argument('--shortside', default=256, type=int)
     parser.add_argument('--num_worker', default=16, type=int)
     parser.add_argument('--seed', default=123, type=int)
+    parser.add_argument('--missing_url', default=None, type=str)
     args = parser.parse_args()
     random.seed(args.seed)
 
@@ -130,17 +143,38 @@ if __name__ == "__main__":
             for anno in annos:
                 classname = anno['label'].replace(' ', '_')
                 videos.add((vid, classname))
+    elif args.dataset == 'missing':
+        assert args.missing_url is not None
+        print("Trying to read the input url {}".format(args.missing_url))
+        #try:
+        data = urllib.request.urlopen(args.missing_url)
+        #except:
+        #    print("Was not able to read the file")
+        #    exit()  # is there a better way to do thi?
+
+        for line in data:
+            video_name = str(line).split('/')[-1][:-3]
+            class_name = str(line).split('/')[-2]
+            download_url = str(line)[2:-3]
+            videos.add((download_url, video_name, class_name))
 
     print('{} videos to download.'.format(len(videos)))
 
-    # download with process pool
-    videos = list(videos)
-    random.shuffle(videos)
-    if args.num_worker > 1:
-        pool = Pool(args.num_worker)
-        pool.map(partial(process, args=args), videos)
-    else:
-        for video in videos:
-            process(video, args)
-
+    if args.dataset != 'missing':
+        # download with process pool
+        videos = list(videos)
+        random.shuffle(videos)
+        if args.num_worker > 1:
+            pool = Pool(args.num_worker)
+            pool.map(partial(process, args=args), videos)
+        else:
+            for video in videos:
+                process(video, args)
+    elif args.dataset == 'missing':
+        if args.num_worker > 1:
+            pool = Pool(args.num_worker)
+            pool.map(partial(process_missing, args=args), videos)
+        else:
+            for video in videos:
+                process_missing(video, args)
     print('Completed!')
