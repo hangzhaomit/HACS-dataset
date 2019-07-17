@@ -72,11 +72,11 @@ Archery,0O_qMHxBfXg,training,24.5,26.5,-1
 
 ```python download_videos.py --root_dir ROOT_DIR [--dataset {all,segments}] [--shortside SHORTSIDE]```
 
-- ```ROOT_DIR``` is the root path to save the downloaded videos;
-You can choose to download all videos or only HACS Segments videos with ```--dataset```;
-By default, we resize videos with short side of 256 for less disk usage, you can change with ```--shortside```.
+- ```ROOT_DIR``` is the root path to save the downloaded videos; videos are saved in the following directory structure ```ROOT_DIR/CLASSNAME/v_ID.mp4```;
 
-- Videos are saved in the following directory structure ```ROOT_DIR/CLASSNAME/v_ID.mp4```
+- You can either download all videos (default), or only HACS Segments videos with ```--dataset segments```;
+
+- By default, we resize videos with short side of 256 for less disk usage, you can change with ```--shortside```.
 
 ## Request testing videos and missing videos: (NEW)
 
