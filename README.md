@@ -8,6 +8,9 @@ Project Website: http://hacs.csail.mit.edu/
 
 Paper: https://arxiv.org/abs/1712.09374
 
+### *Updates on v1.1.1
+A minor change comparing to v1.1: we remove some invalid videos from the dataset. This should not affect the testing set.
+
 ## Download Annotation Files
 1. Clone this repository:
 ```
