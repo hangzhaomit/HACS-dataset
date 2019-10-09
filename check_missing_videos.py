@@ -18,7 +18,7 @@ if __name__ == '__main__':
     # parse annotation file
     videos_dataset = set()
     if args.dataset == 'all':
-        annotation_file = 'HACS_v1.1/HACS_clips_v1.1.csv'
+        annotation_file = 'HACS_v1.1.1/HACS_clips_v1.1.1.csv'
         with open(annotation_file, 'r') as f:
             reader = csv.reader(f, delimiter=',')
             next(reader)
@@ -30,7 +30,7 @@ if __name__ == '__main__':
                 videos_dataset.add((vid, classname))
 
     elif args.dataset == 'segments':
-        annotation_file = 'HACS_v1.1/HACS_segments_v1.1.json'
+        annotation_file = 'HACS_v1.1.1/HACS_segments_v1.1.1.json'
         dataset = json.load(open(annotation_file, 'r'))['database']
         for vid, info in dataset.items():
             info = dataset[vid]

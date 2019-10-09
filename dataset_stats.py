@@ -1,8 +1,8 @@
 import csv
 import json
 
-file_clips = './HACS_v1.1/HACS_clips_v1.1.csv'
-file_segments = './HACS_v1.1/HACS_segments_v1.1.json'
+file_clips = './HACS_v1.1.1/HACS_clips_v1.1.1.csv'
+file_segments = './HACS_v1.1.1/HACS_segments_v1.1.1.json'
 subsets = ['training', 'validation', 'testing']
 
 
