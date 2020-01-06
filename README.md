@@ -8,6 +8,9 @@ Project Website: http://hacs.csail.mit.edu/
 
 Paper: https://arxiv.org/abs/1712.09374
 
+### *Updates on v1.1.1
+A minor change comparing to v1.1: we remove some invalid videos from the dataset. This should not affect the testing set.
+
 ## Download Annotation Files
 1. Clone this repository:
 ```
@@ -15,7 +18,7 @@ git clone https://github.com/hangzhaomit/HACS-dataset.git
 ```
 2. Unzip annotation files:
 ```
-unzip HACS_v1.1.zip
+unzip HACS_v1.1.1.zip
 ```
 3. Check dataset statistics:
 ```
@@ -24,18 +27,18 @@ python dataset_stats.py
 &nbsp;&nbsp; You should expect the following output:
 ```
 ====Parsing clips====
-[training set]: 492753 videos, 1509497 clips
-[validation set]: 5982 videos, 20249 clips
+[training set]: 492748 videos, 1509478 clips
+[validation set]: 5981 videos, 20245 clips
 [testing set]: 5988 videos, 20296 clips
 ====Parsing segments====
-[training set]: 37618 videos
-[validation set]: 5982 videos
+[training set]: 37613 videos
+[validation set]: 5981 videos
 [testing set]: 5988 videos
 Done.
 ```
 
 ## Annotation File Format
-1. For HACS Clips, the annotation file is ```HACS_v1.1/HACS_clips_v1.1.csv```. ```"label": 1```/```"label": -1``` refers to positive/negative sample. The format looks like the following:
+1. For HACS Clips, the annotation file is ```HACS_v1.1.1/HACS_clips_v1.1.1.csv```. ```"label": 1```/```"label": -1``` refers to positive/negative sample. The format looks like the following:
 ```
 classname,youtube_id,subset,start,end,label
 Archery,a2X2hz1G6i8,training,15.5,17.5,1
@@ -44,7 +47,7 @@ Archery,0O_qMHxBfXg,training,24.5,26.5,-1
 ...
 ```
 
-2. For HACS Segments, the annotation file is ```HACS_v1.1/HACS_segments_v1.1.json```, with the same format as ActivityNet dataset:
+2. For HACS Segments, the annotation file is ```HACS_v1.1.1/HACS_segments_v1.1.1.json```, with the same format as ActivityNet dataset:
 ```
 {
   "database": {
