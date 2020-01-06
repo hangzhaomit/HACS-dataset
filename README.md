@@ -9,7 +9,7 @@ Project Website: http://hacs.csail.mit.edu/
 Paper: https://arxiv.org/abs/1712.09374
 
 ### *Updates on v1.1.1
-A minor change comparing to v1.1: we remove some invalid videos from the dataset. This should not affect the testing set.
+A minor change comparing to v1.1: we remove some invalid videos from the dataset.
 
 ## Download Annotation Files
 1. Clone this repository:
@@ -29,11 +29,11 @@ python dataset_stats.py
 ====Parsing clips====
 [training set]: 492748 videos, 1509478 clips
 [validation set]: 5981 videos, 20245 clips
-[testing set]: 5988 videos, 20296 clips
+[testing set]: 5987 videos, 20293 clips
 ====Parsing segments====
 [training set]: 37613 videos
 [validation set]: 5981 videos
-[testing set]: 5988 videos
+[testing set]: 5987 videos
 Done.
 ```
 
@@ -96,9 +96,7 @@ Archery,0O_qMHxBfXg,training,24.5,26.5,-1
     ```
     (b) Submit a video request by agreeing to terms of use at: https://goo.gl/forms/0STStcLndI32oke22. You will get links to the missing videos within 72 hours.
 
-    (c) NOTE: We limit up to 50,000 videos per request, so please send multiple requests if you have more missing videos.
-
-    (d) Use the download script to download missing videos by running `python download_videos.py --root_dir rest_of_your_videos --dataset missing --missing_url "http://sample.missing/urls.txt"`
+    (c) Use the download script to download missing videos by running `python download_videos.py --root_dir rest_of_your_videos --dataset missing --missing_url "http://sample.missing/urls.txt"`
 
 ## Reference
 If you use find the dataset helpful, please cite:
