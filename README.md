@@ -103,7 +103,7 @@ If you use find the dataset helpful, please cite:
 ```bibtex
 @article{zhao2019hacs,
   title={HACS: Human Action Clips and Segments Dataset for Recognition and Temporal Localization},
-  author={Zhao, Hang and Yan, Zhicheng and Torresani, Lorenzo and Torralba, Antonio},
+  author={Zhao, Hang and Torralba, Antonio and Torresani, Lorenzo and Yan, Zhicheng},
   journal={arXiv preprint arXiv:1712.09374},
   year={2019}
 }
