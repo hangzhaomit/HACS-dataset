@@ -101,10 +101,11 @@ Archery,0O_qMHxBfXg,training,24.5,26.5,-1
 ## Reference
 If you use find the dataset helpful, please cite:
 ```bibtex
-@article{zhao2019hacs,
-  title={HACS: Human Action Clips and Segments Dataset for Recognition and Temporal Localization},
+@inproceedings{zhao2019hacs,
+  title={Hacs: Human action clips and segments dataset for recognition and temporal localization},
   author={Zhao, Hang and Torralba, Antonio and Torresani, Lorenzo and Yan, Zhicheng},
-  journal={arXiv preprint arXiv:1712.09374},
+  booktitle={Proceedings of the IEEE International Conference on Computer Vision},
+  pages={8668--8678},
   year={2019}
 }
 ```
