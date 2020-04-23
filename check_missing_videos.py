@@ -44,7 +44,7 @@ if __name__ == '__main__':
     print('{} videos in dataset.'.format(len(videos_dataset)))
 
     # index video files
-    video_files = glob.glob(os.path.join(args.root_dir, '*', '*.mp4'))
+    video_files = glob.glob(os.path.join(args.root_dir, '**', '*.mp4'), recursive=True)
     videos_exist = set()
     for video in video_files:
         items = video.split('/')
