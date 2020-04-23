@@ -96,7 +96,7 @@ Archery,0O_qMHxBfXg,training,24.5,26.5,-1
     ```
     (b) Submit a video request by agreeing to terms of use at: https://goo.gl/forms/0STStcLndI32oke22. You will get links to the missing videos within 72 hours.
 
-    (c) Use the download script to download missing videos by running `python download_videos.py --root_dir rest_of_your_videos --dataset missing --missing_url "http://sample.missing/urls.txt"`
+    (c) Use the download script to download missing videos by running `python download_videos.py --root_dir ROOT_DIR --dataset missing --missing_url "http://sample.missing/urls.txt"`
 
 ## Reference
 If you use find the dataset helpful, please cite:
